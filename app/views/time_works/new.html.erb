@@ -9,5 +9,5 @@
   <%= time.select :status_id, @status.pluck(:name, :id)%><br>
   Ubicacion:
   <%= time.select :location_id, @location.pluck(:name, :id)%><br>
-  <%= time.submit %>
+  <%= time.submit "Agregar"%>
 <% end %>
