@@ -1,0 +1,20 @@
+<% if @status.present? %>
+  <%= @status.each do |s| %>
+  <div class="card col-md-6" style="">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Codigo de ubicacion: <%=s.id%></li>
+      <li class="list-group-item">Nombre de la ubicacion: <%=s.name%></li>
+    </ul>
+    <div class="card-body">
+      <%=link_to "Mostrar estado", status_path(s.id) %>
+      <%=link_to "Modificar estado", edit_status_path(s.id) %>
+      <%=link_to "Eliminar estado",s, method: :delete %>
+    </div>
+  </div>
+
+
+  <% end %>
+<% else %>
+  <h1>No hay estados todavia!!!</h1>
+<% end %>
+<%=link_to "Agregar nuevo estado", new_status_path, class: "btn btn-primary" %>

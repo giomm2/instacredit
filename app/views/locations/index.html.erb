@@ -1,0 +1,19 @@
+<% if @location.present? %>
+  <%= @location.each do |l| %>
+    <div class="card col-md-6" style="">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Codigo de centro: <%=l.id%></li>
+        <li class="list-group-item">Nombre de centro: <%=l.name%></li>
+      </ul>
+      <div class="card-body">
+        <%=link_to "Mostrar ubicacion", location_path(l.id) %>
+        <%=link_to "Modificar ubicacion", edit_location_path(l.id) %>
+        <%=link_to "Eliminar ubicacion",l, method: :delete %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <h1>No hay ubicaciones todavia!!!</h1>
+<% end %>
+<%=link_to "Agregar nueva ubicacion", new_location_path, class:"btn btn-primary" %>
+

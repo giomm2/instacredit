@@ -1,0 +1,10 @@
+<div class="card col-md-6" style="">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Nombre del empleado: <%=@time.employee.name%></li>
+    <li class="list-group-item">Ubicacion: <%=@time.location.name%></li>
+    <li class="list-group-item">Estado: <%=@time.status.name%></li>
+    <li class="list-group-item">Fecha inicio: <%=@time.start_date%></li>
+    <li class="list-group-item">Fecha final: <%=@time.finish_date%></li>
+  </ul>
+</div>
+<%= link_to "Regresar", time_works_path%>

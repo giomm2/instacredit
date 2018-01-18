@@ -1,0 +1,15 @@
+<% if @employee.time_works.present? %>
+  <%= @employee.time_works.each do |e| %>
+    <div class="card col-md-6" style="">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Nombre del empleado: <%=e.employee.name%></li>
+        <li class="list-group-item">Ubicacion <%=e.location.name%></li>
+        <li class="list-group-item">start_date: <%=e.start_date%></li>
+        <li class="list-group-item">finish_date: <%=e.finish_date%></li>
+      </ul>
+    </div>
+  <% end %>
+  <%=link_to "Crear PDF", report_employee_path, class: "btn btn-primary"%>
+<% else %>
+  <h1>No hay ubicacion para empleado todavia!!!</h1>
+<% end %></br>

@@ -1,0 +1,17 @@
+<% if @employee.present? %>
+  <%= @employee.each do |e| %>
+    <div class="card col-md-6" style="">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Nombre del empleado: <%=e.name%></li>
+        <li class="list-group-item">Apellido del empleado: <%=e.last_name%></li>
+        <li class="list-group-item">Identificacion: <%=e.identification%></li>
+      </ul>
+      <div class="card-body">
+        <%=link_to "Historico de ubicaciones", history_employee_path(e.id) %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <h1>No hay empleados todavia!!!</h1>
+<% end %>
+<%=link_to "Agregar ubicacion y empleado", new_time_work_path, class: "btn btn-primary"%>

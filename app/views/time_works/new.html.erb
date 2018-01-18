@@ -1,0 +1,13 @@
+<%= form_for @time do |time| %>
+  Fecha de inicio:
+  <%= time.date_field :start_date %></br>
+  Fecha final:
+  <%= time.date_field :finish_date %></br>
+  Empleado:
+  <%= time.select :employee_id, @employee.pluck(:name, :id)%><br>
+  Estado:
+  <%= time.select :status_id, @status.pluck(:name, :id)%><br>
+  Ubicacion:
+  <%= time.select :location_id, @location.pluck(:name, :id)%><br>
+  <%= time.submit %>
+<% end %>

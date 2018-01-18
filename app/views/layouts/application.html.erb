@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Instacredit</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" <%=link_to "Mantenimiento empleados", employees_path %></a>
+        </div>
+        <a class="navbar-brand" <%=link_to "Mantenimiento ubicacion", locations_path %></a>
+        <a class="navbar-brand" <%=link_to "Mantenimiento estado", statuses_path %></a>
+        <a class="navbar-brand" <%=link_to "Ubicacion empleado", time_works_path %></a>
+      </div>
+    </nav>
+
+    <p class="notice text-success text-center text-uppercase">
+    <%= notice %>
+    <p class="alert text-danger text-center text-uppercase">
+    <%= alert %>
+  </p>
+</p>
+  </head>
+
+  <body class="container">
+    <%= yield %>
+  </body>
+</html>

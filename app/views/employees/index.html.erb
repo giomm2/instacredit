@@ -1,0 +1,20 @@
+<% if @employee.present? %>
+  <%= @employee.each do |e| %>
+    <div class="card col-md-6" style="">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Nombre del empleado: <%=e.name%></li>
+        <li class="list-group-item">Apellido del empleado: <%=e.last_name%></li>
+        <li class="list-group-item">Identificacion: <%=e.identification%></li>
+      </ul>
+      <div class="card-body">
+        <%=link_to "Mostrar empleado", employee_path(e.id) %>
+        <%=link_to "Modificar empleado", edit_employee_path(e.id) %>
+        <%=link_to "Eliminar empleado",e, method: :delete %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <h1>No hay empleados todavia!!!</h1>
+<% end %></br>
+<%=link_to "Agregar nuevo empleado", new_employee_path, class: "btn btn-primary"%>
+

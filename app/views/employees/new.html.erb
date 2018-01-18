@@ -1,0 +1,9 @@
+<%= form_for @employee do |employee| %>
+  Nombre:
+  <%= employee.text_field :name %></br>
+  Apellido:
+  <%= employee.text_field :last_name %></br>
+  Cedula:
+  <%= employee.text_field :identification %></br>
+  <%= employee.submit %>
+<% end %>
